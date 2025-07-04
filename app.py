@@ -6,6 +6,11 @@ import shutil # ファイル操作のためのモジュール
 from flask import Flask, request, send_file, jsonify, abort
 from werkzeug.utils import secure_filename # ファイル名を安全にするためのユーティリティ
 
+from flask_cors import CORS # この行を追加
+
+app = Flask(__name__)
+CORS(app) # この行を追加: これがCORSを有効にする魔法の杖です
+
 app = Flask(__name__)
 
 # ダウンロード一時保存用ディレクトリ
