@@ -11,8 +11,6 @@ from flask_cors import CORS # この行を追加
 app = Flask(__name__)
 CORS(app) # この行を追加: これがCORSを有効にする魔法の杖です
 
-app = Flask(__name__)
-
 # ダウンロード一時保存用ディレクトリ
 # Renderのようなクラウド環境では、ファイルシステムへの書き込みは一時的です。
 # ダウンロード後すぐに削除することが重要です。
