@@ -51,6 +51,8 @@ def download_video():
         # --restrict-filenames: ファイル名に使用できない文字を制限
         # --no-playlist: プレイリストをダウンロードしない
         # --print-json: 動画情報をJSON形式で取得（ファイル名決定のため）
+
+        # app.py の download_video 関数内
         command = [
             sys.executable,
             "-m",
@@ -59,9 +61,12 @@ def download_video():
             "-o", temp_output_path_template,
             "--restrict-filenames",
             "--no-playlist",
-            "--print-json", # ファイル情報をJSONで取得
+            "--print-json",
+            "--no-check-certificate",  # 追加
+            "--geo-bypass-country", "JP", # 追加: 日本からアクセスしているように見せかける
             video_url
         ]
+
 
         # サブプロセスとしてyt-dlpを実行し、標準出力をキャプチャ
         # check=True: コマンドがエラーコードを返したらCalledProcessErrorを発生させる
