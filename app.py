@@ -64,6 +64,7 @@ def download_video():
             "--print-json",
             "--no-check-certificate",  # 追加
             "--geo-bypass-country", "JP", # 追加: 日本からアクセスしているように見せかける
+            "--verbose",  # ★★★ この行を追加 ★★★
             video_url
         ]
 
