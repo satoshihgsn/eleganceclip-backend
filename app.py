@@ -42,7 +42,8 @@ def download_video():
             "--print-json",
             "--no-check-certificate",
             "--geo-bypass-country", "JP",
-            "--verbose"
+            "--verbose",
+            "--merge-output-format", "mp4"
         ]
 
         # 環境変数からプロキシURLを取得し、存在すればコマンドに追加
@@ -56,7 +57,7 @@ def download_video():
 
         # yt-dlpを実行
         process = subprocess.run(command, check=True, capture_output=True, text=True, encoding='utf-8')
-        
+
         # （以降の処理は変更なし）
         video_info_json = ""
         for line in process.stdout.splitlines():
