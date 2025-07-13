@@ -35,7 +35,7 @@ def download_video():
         # --- コマンド構築 ---
         command = [
             sys.executable, "-m", "yt_dlp",
-            "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
+            "-f", "bestvideo[vcodec^=avc][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
             "-o", temp_output_path_template,
             "--restrict-filenames",
             "--no-playlist",
